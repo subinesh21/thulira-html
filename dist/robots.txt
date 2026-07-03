@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /account/
+Disallow: /orders/
+Disallow: /checkout/
+
+# Allow important public pages
+Allow: /
+Allow: /products
+Allow: /product/
+Allow: /blogs
+
+# Sitemap location
+Sitemap: https://thulira.com/sitemap.xml

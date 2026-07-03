@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.kspgeneralcontractors.com.sg/sitemap.xml
