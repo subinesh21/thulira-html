@@ -23,7 +23,7 @@ export async function onRequestPost({ request }) {
     const expectedCode = mockOtps[phone];
     if (expectedCode && String(otp).trim() === String(expectedCode).trim()) {
       delete mockOtps[phone];
-      const email = `${phone.replace(/\D/g, '')}@mock-phone-login.thulira.com`;
+      const email = `thulira.${phone.replace(/\D/g, '')}@gmail.com`;
       return new Response(JSON.stringify({ success: true, email: email, password: 'thuliraMockPassword123!' }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });

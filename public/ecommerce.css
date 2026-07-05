@@ -354,31 +354,38 @@
 /* Checkout Page Grid Layout */
 .checkout-page-wrapper {
   min-height: 100vh;
-  background: var(--thulira-bg-dark);
-  color: var(--thulira-text-light);
+  background: #f9fafb;
+  color: #111827;
   font-family: var(--thulira-font);
-  padding: 6rem 1rem 4rem 1rem;
+  padding: 8rem 1rem 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .checkout-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
 }
 
 @media (min-width: 992px) {
   .checkout-grid {
-    grid-template-columns: 1.3fr 0.8fr;
+    grid-template-columns: 1.3fr 1fr;
+    justify-content: center;
   }
 }
 
 .checkout-panel {
-  background: var(--thulira-bg-card);
-  border: 1px solid var(--thulira-border);
-  border-radius: 8px;
-  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .checkout-panel h2 {
@@ -386,8 +393,9 @@
   font-weight: 800;
   margin-top: 0;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--thulira-border);
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 0.75rem;
+  color: #111827;
 }
 
 /* Checkout Form elements */
@@ -421,13 +429,13 @@
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--thulira-text-muted);
+  color: #4b5563;
 }
 
 .form-input {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--thulira-border);
-  color: var(--thulira-text-light);
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #111827;
   padding: 0.75rem;
   border-radius: 4px;
   font-size: 0.95rem;
@@ -438,7 +446,8 @@
 .form-input:focus {
   outline: none;
   border-color: var(--thulira-orange);
-  background: rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 165, 116, 0.2);
 }
 
 /* Order Summary Column */
@@ -447,7 +456,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .order-summary-item-name {
@@ -456,7 +465,7 @@
 }
 
 .order-summary-item-qty {
-  color: var(--thulira-text-muted);
+  color: #6b7280;
   font-size: 0.85rem;
   margin-left: 0.5rem;
 }
@@ -471,7 +480,7 @@
   gap: 0.6rem;
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--thulira-border);
+  border-top: 1px solid #e5e7eb;
 }
 
 .order-summary-total-row {
@@ -483,9 +492,9 @@
 .order-summary-total-row.grand-total {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--thulira-orange);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 0.75rem;
+  color: #111827;
+  border-top: 2px solid #e5e7eb;
+  padding-top: 1rem;
   margin-top: 0.5rem;
 }
 
@@ -1000,3 +1009,203 @@ main {
   transform: none !important;
   scale: none !important;
 }
+
+/* ==========================================================================
+   Product Card Redesign (TravelCard Style with Hover Interactions)
+   ========================================================================== */
+
+/* Card Container */
+.product-card {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 4px; /* Sharpened edges */
+  border: 1px solid var(--thulira-border, rgba(255, 255, 255, 0.15));
+  background-color: var(--thulira-bg-dark, #121212);
+  box-shadow: none !important; /* Removed shadow */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  box-shadow: none !important; /* Removed hover shadow */
+  transform: translateY(-8px); /* hover:-translate-y-2 */
+}
+
+/* Background Image with Zoom Effect on Hover */
+.product-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.1); /* hover:scale-110 */
+}
+
+/* Gradient Overlay for Text Readability */
+.product-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+/* Content Container */
+.product-card__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align elements to the bottom */
+  height: 100%;
+  padding: 1.5rem; /* p-6 */
+  z-index: 3;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Top Section: Spacer */
+.product-card__top {
+  display: none;
+}
+
+/* Middle Section: Details (slides up on hover) */
+.product-card__details {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0.25rem;
+}
+
+/* Slide up by the height of bottom button on hover */
+.product-card:hover .product-card__details {
+  transform: translateY(-65px);
+}
+
+.product-card__title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* Flex row for displaying Price and Size inline */
+.product-card__info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.product-card__price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--thulira-orange, #f78c44);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.product-card__sizes-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+/* Bottom Section: Add to Cart Button (revealed on hover) */
+.product-card__bottom {
+  position: absolute;
+  bottom: -65px; /* hidden off-card */
+  left: 0;
+  width: 100%;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 4;
+}
+
+.product-card:hover .product-card__bottom {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* Style for size buttons inside the card to fit dark backdrop */
+.product-card .size-btn {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin: 0 !important;
+}
+
+.product-card .size-btn.active,
+.product-card .size-btn:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+.product-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--thulira-orange, #f78c44);
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  gap: 0.5rem;
+}
+
+.product-card__button:hover {
+  background: #ff9e5e;
+}
+
+.product-card__button .arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.product-card__button:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Global border radius matching Webflow usp-cards (0.25rem / 4px) */
+:root {
+  --_sizing---3xs: 0.25rem !important;
+}
+
+button, .button, .btn,
+.usp-card, .card, .checkout-panel, .auth-modal, .cart-panel,
+.order-summary, .product-card, .review-card,
+input:not([type="radio"]):not([type="checkbox"]),
+textarea, select, .form-input, .quantity-btn,
+img:not(.close-icon):not([src*="svg"]),
+video, iframe {
+  border-radius: 0.25rem !important;
+}
+
+/* Exempt perfectly round elements */
+.close-cart, .close-auth, [type="radio"], [type="checkbox"], .cart-count, .color-option {
+  border-radius: 50% !important;
+}
+
+
+

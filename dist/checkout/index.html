@@ -16,7 +16,7 @@
 <link href="https://cdn.prod.website-files.com/6978c74eb7a56e10b85274cb/699715925c02a742c5f3854f_Webclip.png" rel="apple-touch-icon"/>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script defer="" src="supabaseClient.js?v=2"></script>
-<script defer="" src="cart.js?v=2"></script>
+<script defer="" src="cart.js?v=3"></script>
 
 <style>
   /* Prevent Webflow scaling down interaction on the page content */
@@ -180,10 +180,16 @@
           currentUser = user;
           const phoneInput = document.getElementById('phoneNum');
           if (phoneInput) {
-            phoneInput.value = user.phone;
-            phoneInput.readOnly = true;
-            phoneInput.style.opacity = '0.7';
-            phoneInput.title = 'Phone number is locked to your verified account';
+            const userPhone = user.phone || user.user_metadata?.phone;
+            phoneInput.value = userPhone || '';
+            if (userPhone) {
+              phoneInput.readOnly = true;
+              phoneInput.style.opacity = '0.7';
+              phoneInput.title = 'Phone number is locked to your verified account';
+            } else {
+              phoneInput.readOnly = false;
+              phoneInput.style.opacity = '1';
+            }
           }
         }
         
@@ -192,9 +198,15 @@
             currentUser = session.user;
             const phoneInput = document.getElementById('phoneNum');
             if (phoneInput) {
-              phoneInput.value = session.user.phone;
-              phoneInput.readOnly = true;
-              phoneInput.style.opacity = '0.7';
+              const userPhone = session.user.phone || session.user.user_metadata?.phone;
+              phoneInput.value = userPhone || '';
+              if (userPhone) {
+                phoneInput.readOnly = true;
+                phoneInput.style.opacity = '0.7';
+              } else {
+                phoneInput.readOnly = false;
+                phoneInput.style.opacity = '1';
+              }
             }
           } else {
             currentUser = null;
@@ -236,12 +248,32 @@
           unit_price: item.price
         }));
 
-        const { data: orderId, error } = await window.supabaseClient.rpc('create_order_with_items', {
+        let { data: orderId, error } = await window.supabaseClient.rpc('create_order_with_items', {
           p_customer_name: name,
           p_customer_phone: phone,
           p_shipping_address: address,
           p_items: itemsPayload
         });
+
+        // Fallback: If 4-argument version is not found, fallback to 6-argument version
+        if (error && error.message.includes('Could not find the function')) {
+          console.warn('[CHECKOUT] 4-argument RPC not found, falling back to 6-argument RPC...');
+          let subtotal = 0;
+          cartItems.forEach(item => {
+            subtotal += item.price * item.quantity;
+          });
+          
+          const fallbackRes = await window.supabaseClient.rpc('create_order_with_items', {
+            p_customer_name: name,
+            p_customer_phone: phone,
+            p_shipping_address: address,
+            p_subtotal: subtotal,
+            p_total: subtotal,
+            p_items: itemsPayload
+          });
+          orderId = fallbackRes.data;
+          error = fallbackRes.error;
+        }
 
         if (error) {
           alert('Failed to place order: ' + error.message);

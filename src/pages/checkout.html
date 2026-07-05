@@ -16,7 +16,7 @@
 <link href="https://cdn.prod.website-files.com/6978c74eb7a56e10b85274cb/699715925c02a742c5f3854f_Webclip.png" rel="apple-touch-icon"/>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script defer="" src="supabaseClient.js?v=2"></script>
-<script defer="" src="cart.js?v=2"></script>
+<script defer="" src="cart.js?v=3"></script>
 
 <style>
   /* Prevent Webflow scaling down interaction on the page content */
@@ -63,6 +63,10 @@
 </div>
 </div>
 <main class="checkout-page-wrapper">
+<div class="checkout-header-title" style="text-align: center; width: 100%; margin-bottom: 3rem;">
+  <h1 style="font-size: 2.5rem; font-weight: 800; color: #111827; margin: 0;">Secure Checkout</h1>
+  <p style="color: #6b7280; margin-top: 0.5rem; font-size: 1.1rem;">Review your items and complete your purchase</p>
+</div>
 <div class="checkout-grid" id="checkoutContent">
 <div class="checkout-panel">
 <h2>Shipping Information</h2>
@@ -72,17 +76,42 @@
 <label for="fullName">Full Name</label>
 <input class="form-input" id="fullName" placeholder="First and Last Name" required="" type="text"/>
 </div>
-</div>
-<div class="form-row two-cols">
 <div class="form-group">
-<label for="phoneNum">Phone Number (Singapore)</label>
+<label for="phoneNum">Phone Number</label>
 <input class="form-input" id="phoneNum" pattern="^[+]*[0-9]{8,15}$" required="" type="tel"/>
 </div>
+</div>
+
 <div class="form-group">
-<label for="projectAddress">Shipping Address</label>
-<input class="form-input" id="projectAddress" required="" type="text"/>
+<label for="address1">Address Line 1</label>
+<input class="form-input" id="address1" placeholder="Street address, P.O. box, company name, c/o" required="" type="text"/>
+</div>
+
+<div class="form-group">
+<label for="address2">Address Line 2 (Optional)</label>
+<input class="form-input" id="address2" placeholder="Apartment, suite, unit, building, floor, etc." type="text"/>
+</div>
+
+<div class="form-row three-cols">
+<div class="form-group">
+<label for="city">City</label>
+<input class="form-input" id="city" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="state">State</label>
+<input class="form-input" id="state" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="pincode">Pincode</label>
+<input class="form-input" id="pincode" required="" type="text"/>
 </div>
 </div>
+
+<div class="form-group" style="margin-bottom: 1rem;">
+<label for="additionalInfo">Additional Information (Optional)</label>
+<textarea class="form-input" id="additionalInfo" rows="3" placeholder="Special delivery instructions or order notes" style="resize: vertical;"></textarea>
+</div>
+
 <button class="place-order-btn" id="placeOrderBtn" type="submit">
 <span>Place COD Order</span>
 </button>
@@ -147,12 +176,16 @@
           subtotal += item.price * item.quantity;
           const displayVariant = item.color ? `${item.variant} / ${item.color}` : item.variant;
           html += `
-            <div class="order-summary-item">
-              <div>
-                <span class="order-summary-item-name">${escapeHTML(item.title)} <span class="cart-item-size-badge">${escapeHTML(displayVariant)}</span></span>
-                <span class="order-summary-item-qty">x${item.quantity}</span>
+            <div class="order-summary-item" style="display: flex; gap: 1rem; align-items: center; padding: 1rem 0;">
+              <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" style="width: 64px; height: 64px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb;" />
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <span class="order-summary-item-name" style="display: block; font-weight: 700;">${escapeHTML(item.title)}</span>
+                  <span class="cart-item-size-badge" style="color: #6b7280; font-size: 0.85rem;">${escapeHTML(displayVariant)}</span>
+                </div>
+                <span class="order-summary-item-qty" style="color: #6b7280; font-size: 0.85rem; margin-top: 4px;">Qty: ${item.quantity}</span>
               </div>
-              <span class="order-summary-item-price">₹${item.price * item.quantity}</span>
+              <span class="order-summary-item-price" style="font-weight: 800; font-size: 1.1rem; color: #111827;">₹${item.price * item.quantity}</span>
             </div>
           `;
         });
@@ -180,10 +213,16 @@
           currentUser = user;
           const phoneInput = document.getElementById('phoneNum');
           if (phoneInput) {
-            phoneInput.value = user.phone;
-            phoneInput.readOnly = true;
-            phoneInput.style.opacity = '0.7';
-            phoneInput.title = 'Phone number is locked to your verified account';
+            const userPhone = user.phone || user.user_metadata?.phone;
+            phoneInput.value = userPhone || '';
+            if (userPhone) {
+              phoneInput.readOnly = true;
+              phoneInput.style.opacity = '0.7';
+              phoneInput.title = 'Phone number is locked to your verified account';
+            } else {
+              phoneInput.readOnly = false;
+              phoneInput.style.opacity = '1';
+            }
           }
         }
         
@@ -192,9 +231,15 @@
             currentUser = session.user;
             const phoneInput = document.getElementById('phoneNum');
             if (phoneInput) {
-              phoneInput.value = session.user.phone;
-              phoneInput.readOnly = true;
-              phoneInput.style.opacity = '0.7';
+              const userPhone = session.user.phone || session.user.user_metadata?.phone;
+              phoneInput.value = userPhone || '';
+              if (userPhone) {
+                phoneInput.readOnly = true;
+                phoneInput.style.opacity = '0.7';
+              } else {
+                phoneInput.readOnly = false;
+                phoneInput.style.opacity = '1';
+              }
             }
           } else {
             currentUser = null;
@@ -225,7 +270,17 @@
 
         const name = document.getElementById('fullName').value;
         const phone = document.getElementById('phoneNum').value;
-        const address = document.getElementById('projectAddress').value;
+        const addr1 = document.getElementById('address1').value.trim();
+        const addr2 = document.getElementById('address2').value.trim();
+        const city = document.getElementById('city').value.trim();
+        const state = document.getElementById('state').value.trim();
+        const pincode = document.getElementById('pincode').value.trim();
+        const info = document.getElementById('additionalInfo').value.trim();
+        
+        let address = `${addr1}`;
+        if (addr2) address += `, ${addr2}`;
+        address += `, ${city}, ${state} - ${pincode}`;
+        if (info) address += `\nNotes: ${info}`;
         
         const itemsPayload = cartItems.map(item => ({
           product_id: item.id,
@@ -236,12 +291,32 @@
           unit_price: item.price
         }));
 
-        const { data: orderId, error } = await window.supabaseClient.rpc('create_order_with_items', {
+        let { data: orderId, error } = await window.supabaseClient.rpc('create_order_with_items', {
           p_customer_name: name,
           p_customer_phone: phone,
           p_shipping_address: address,
           p_items: itemsPayload
         });
+
+        // Fallback: If 4-argument version is not found, fallback to 6-argument version
+        if (error && error.message.includes('Could not find the function')) {
+          console.warn('[CHECKOUT] 4-argument RPC not found, falling back to 6-argument RPC...');
+          let subtotal = 0;
+          cartItems.forEach(item => {
+            subtotal += item.price * item.quantity;
+          });
+          
+          const fallbackRes = await window.supabaseClient.rpc('create_order_with_items', {
+            p_customer_name: name,
+            p_customer_phone: phone,
+            p_shipping_address: address,
+            p_subtotal: subtotal,
+            p_total: subtotal,
+            p_items: itemsPayload
+          });
+          orderId = fallbackRes.data;
+          error = fallbackRes.error;
+        }
 
         if (error) {
           alert('Failed to place order: ' + error.message);

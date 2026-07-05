@@ -40,7 +40,7 @@ export async function onRequestPost({ request, env }) {
 
     const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
     const defaultPassword = 'thuliraMockPassword123!';
-    const email = `${phone.replace(/\D/g, '')}@mock-phone-login.thulira.com`;
+    const email = `thulira.${phone.replace(/\D/g, '')}@gmail.com`;
 
     // Ensure the user exists in Supabase Auth
     const { data: newUser, error: createError } = await supabase.auth.admin.createUser({

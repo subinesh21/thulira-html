@@ -2,6 +2,10 @@ import { defineConfig } from 'astro/config';
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 
+import react from '@astrojs/react';
+
+import tailwind from '@astrojs/tailwind';
+
 // Load environment variables from .env.local
 dotenv.config({ path: '.env.local' });
 
@@ -35,7 +39,7 @@ export default defineConfig({
                 
                 const url = process.env.SUPABASE_URL;
                 const serviceRole = process.env.SUPABASE_SERVICE_ROLE_KEY;
-                const email = `${phone.replace(/\D/g, '')}@mock-phone-login.thulira.com`;
+                const email = `thulira.${phone.replace(/\D/g, '')}@gmail.com`;
 
                 if (url && serviceRole) {
                   const supabase = createClient(url, serviceRole);
@@ -85,7 +89,7 @@ export default defineConfig({
                 console.log(`[MOCK OTP VERIFY] Received phone: "${phone}", otp: "${otp}" (type: ${typeof otp}). Expected: "${expected}" (type: ${typeof expected}). Current store:`, mockOtps);
                 if (expected && String(otp).trim() === String(expected).trim()) {
                   delete mockOtps[phone];
-                  const email = `${phone.replace(/\D/g, '')}@mock-phone-login.thulira.com`;
+                  const email = `thulira.${phone.replace(/\D/g, '')}@gmail.com`;
                   res.writeHead(200, { 'Content-Type': 'application/json' });
                   res.end(JSON.stringify({ success: true, email: email, password: 'thuliraMockPassword123!' }));
                 } else {
@@ -104,5 +108,7 @@ export default defineConfig({
         });
       }
     }]
-  }
+  },
+
+  integrations: [react(), tailwind()]
 });

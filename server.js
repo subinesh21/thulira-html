@@ -54,7 +54,7 @@ app.post('/api/auth/mock-otp-request', async (req, res) => {
 
   try {
     const defaultPassword = 'thuliraMockPassword123!';
-    const email = `${phone.replace(/\D/g, '')}@mock-phone-login.thulira.com`;
+    const email = `thulira.${phone.replace(/\D/g, '')}@gmail.com`;
 
     // Ensure the user exists in Supabase Auth
     const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
@@ -105,7 +105,7 @@ app.post('/api/auth/mock-otp-verify', (req, res) => {
   if (expectedCode && String(otp).trim() === String(expectedCode).trim()) {
     // Clean up used OTP
     delete mockOtps[phone];
-    const email = `${phone.replace(/\D/g, '')}@mock-phone-login.thulira.com`;
+    const email = `thulira.${phone.replace(/\D/g, '')}@gmail.com`;
     res.json({ success: true, email: email, password: 'thuliraMockPassword123!' });
   } else {
     res.status(400).json({ error: 'Invalid verification code' });

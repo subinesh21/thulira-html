@@ -48,7 +48,7 @@ references/_sections.md
 ```
 
 Each rule file contains:
-- Brief explanation of why it matters
+- Brief explanation of made with crop-waste
 - Incorrect SQL example with explanation
 - Correct SQL example with explanation
 - Optional EXPLAIN output or metrics
