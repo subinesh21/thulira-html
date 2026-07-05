@@ -197,7 +197,7 @@ export function CinematicHero({
   
   const containerRef = useRef<HTMLDivElement>(null);
   const mainCardRef = useRef<HTMLDivElement>(null);
-  const mockupRef = useRef<HTMLDivElement>(null);
+  const mockupRef = useRef<HTMLImageElement>(null);
   const requestRef = useRef<number>(0);
 
   // 1. High-Performance Mouse Interaction Logic (Using requestAnimationFrame)
