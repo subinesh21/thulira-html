@@ -1,5 +1,4 @@
 ---
-import CinematicHeroDemo from '../components/ui/demo';
 import '../styles/globals.css';
 
 const schema = JSON.stringify({
@@ -14,9 +13,9 @@ const schema = JSON.stringify({
     "name": "Thulira",
     "description": "100% Food Safe Eco-friendly Store in Singapore, operating since 2004 with 20+ years of experience and over 500 completed projects.",
     "email": "info@thulira.com",
-    "telephone": "+65 8235 5452",
+    "telephone": "8220107245",
     "sameAs": [
-      "https://wa.me/6582355452"
+      "https://wa.me/8220107245"
     ],
     "areaServed": "SG",
     "serviceType": [
@@ -151,22 +150,52 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
       });
     }, 250);
   });
-</script></div></div><main><CinematicHeroDemo client:load />
+</script></div></div>
+<main>
+  <section class="w-full relative h-[100svh]">
+    <img src="/hero.png" alt="Sustainable Home Essentials" class="w-full h-full object-cover object-center" />
+    
+    <div class="absolute inset-0 flex items-center justify-end px-8 md:px-24">
+      <div class="max-w-xl text-left bg-white/40 md:bg-transparent p-6 rounded-2xl backdrop-blur-sm md:backdrop-blur-none">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-[#4B4E54] leading-tight">
+          Sustainable Living Journey
+        </h1>
+        <p class="text-lg md:text-xl text-[#4B4E54] mb-8 leading-relaxed">
+          Thulira brings you closer to nature with our sustainable home essentials. Explore our range of durable, beautiful products crafted from rice husk, coffee husk, and bamboo waste.
+        </p>
+        <a href="/shop" class="inline-block bg-[#A8CBA0] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#8B9A8B] transition-colors shadow-lg hover:shadow-xl">
+          Shop Now
+        </a>
+      </div>
+    </div>
+  </section>
 <style>
+:root {
+  --_colors---orange: #A8CBA0 !important;
+  --_colors---orange-dark: #8B9A8B !important;
+}
 @media (max-width: 991px) {
   .col__3 {
     grid-template-columns: 1fr !important;
   }
 }
-</style><section class="section is__dark"><div class="z-1"><div class="w-layout-blockcontainer container w-container"><div class="col__2"><div class="col"><h2 class="h2">Featured Categories</h2><p class="max__400">Discover everyday products made from renewable crop waste. Durable, beautiful, and earth-friendly.</p><div class="w-embed"><style>
-
-.service-item__button:hover .service-item__button-icon {
-	background-color: var(--_colors---orange);
+</style><section class="section"><div class="z-1"><div class="w-layout-blockcontainer container w-container"><div class="col__2"><div class="col"><h2 class="h2" style="color: #111;">Featured Categories</h2><p class="max__400" style="color: #333;">Discover everyday products made from renewable crop waste. Durable, beautiful, and earth-friendly.</p><img src="/about.png" alt="Featured Products" style="width: 100%; max-width: 100%; border-radius: 8px; margin-top: 2rem; object-fit: cover; aspect-ratio: 16/9;" /><div class="w-embed"><style>
+:root {
+  --_colors---orange: #A8CBA0 !important;
+  --_colors---orange-dark: #8B9A8B !important;
 }
 
-</style></div></div><div class="col"><div role="list"><div class="service-item__wrapper" data-wf--pop-out-element--variant="base"><a href="/shop#bottles" class="service-item__button" style="text-decoration: none; color: white;"><img alt="eco-friendly products works by Thulira" class="service-item__button-image" loading="lazy" src="/bottle.png"/><h3 class="h3 is-service-item">Bottles</h3><div class="service-item__button-icon w-embed"><svg fill="none" height="100%" viewBox="0 0 40 40" width="100%" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z" fill="white" fill-opacity="0.12"></path>
-<path d="M23.17 19H13V21H23.17L19.59 24.59L21 26L28 19L21 12L19.59 13.41L23.17 19Z" fill="white"></path>
+.service-item__button .service-item__button-icon svg path:first-child {
+	fill: #e0e0e0;
+	transition: fill 0.3s ease;
+}
+.service-item__button:hover .service-item__button-icon svg path:first-child {
+	fill: #A8CBA0;
+}
+
+</style></div></div><div class="col" style="margin-top: 10rem;"><div role="list"><div class="service-item__wrapper" data-wf--pop-out-element--variant="base"><a href="/shop#bottles" class="service-item__button" style="text-decoration: none; color: #111;"><img alt="eco-friendly products works by Thulira" class="service-item__button-image" loading="lazy" src="/bottle.png"/><h3 class="h3 is-service-item">Bottles</h3><div class="service-item__button-icon w-embed"><svg fill="none" height="100%" viewBox="0 0 40 40" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"></path>
+<path d="M23.17 19H13V21H23.17L19.59 24.59L21 26L28 19L21 12L19.59 13.41L23.17 19Z" fill="#555"></path>
 </svg></div></a><div class="service-item__popup-wrapper" data-popup-wrapper=""><div class="service-item__popup-overlay" data-popup-close="" data-popup-overlay=""></div><button class="service-item__popup-close" data-popup-close=""><div class="icon__16 w-embed"><svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.6673 4.27337L11.7273 3.33337L8.00065 7.06004L4.27398 3.33337L3.33398 4.27337L7.06065 8.00004L3.33398 11.7267L4.27398 12.6667L8.00065 8.94004L11.7273 12.6667L12.6673 11.7267L8.94065 8.00004L12.6673 4.27337Z" fill="black"></path>
 </svg></div></button><div class="service-item__popup-content" data-popup-content=""><div class="service-item__popup__slider-wrapper"><div class="service-item__popup__slider-flex"><img alt="eco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="eco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="eco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="service-item__popup__slider-flex"><img alt="eco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="eco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="eco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div></div><div class="service-item__popup-content__inner"><h4 class="h3" data-no-anim="">Bottles</h4><p class="mb__l" data-no-anim="">Eco-friendly bottles for your daily hydration.</p><div class="popup-price-tag">$450.00</div>
@@ -176,9 +205,9 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
 <button class="size-btn" data-size="L">L</button>
 <button class="size-btn" data-size="XL">XL</button>
 </div>
-<button class="add-to-cart-popup-btn" data-product-id="eco-friendly products">Book Service Package</button></div></div></div></div><div class="service-item__wrapper" data-wf--pop-out-element--variant="base"><a href="/shop#drinkware" class="service-item__button" style="text-decoration: none; color: white;"><img alt="Waterpeco-friendly products works by Thulira" class="service-item__button-image" loading="lazy" src="/drinkware.png"/><h3 class="h3 is-service-item">Drinkware</h3><div class="service-item__button-icon w-embed"><svg fill="none" height="100%" viewBox="0 0 40 40" width="100%" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z" fill="white" fill-opacity="0.12"></path>
-<path d="M23.17 19H13V21H23.17L19.59 24.59L21 26L28 19L21 12L19.59 13.41L23.17 19Z" fill="white"></path>
+<button class="add-to-cart-popup-btn" data-product-id="eco-friendly products">Add to Cart</button></div></div></div></div><div class="service-item__wrapper" data-wf--pop-out-element--variant="base"><a href="/shop#drinkware" class="service-item__button" style="text-decoration: none; color: #111;"><img alt="Waterpeco-friendly products works by Thulira" class="service-item__button-image" loading="lazy" src="/drinkware.png"/><h3 class="h3 is-service-item">Drinkware</h3><div class="service-item__button-icon w-embed"><svg fill="none" height="100%" viewBox="0 0 40 40" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"></path>
+<path d="M23.17 19H13V21H23.17L19.59 24.59L21 26L28 19L21 12L19.59 13.41L23.17 19Z" fill="#555"></path>
 </svg></div></a><div class="service-item__popup-wrapper" data-popup-wrapper=""><div class="service-item__popup-overlay" data-popup-close="" data-popup-overlay=""></div><button class="service-item__popup-close" data-popup-close=""><div class="icon__16 w-embed"><svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.6673 4.27337L11.7273 3.33337L8.00065 7.06004L4.27398 3.33337L3.33398 4.27337L7.06065 8.00004L3.33398 11.7267L4.27398 12.6667L8.00065 8.94004L11.7273 12.6667L12.6673 11.7267L8.94065 8.00004L12.6673 4.27337Z" fill="black"></path>
 </svg></div></button><div class="service-item__popup-content" data-popup-content=""><div class="service-item__popup__slider-wrapper"><div class="service-item__popup__slider-flex"><img alt="Waterpeco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="Waterpeco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="Waterpeco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="service-item__popup__slider-flex"><img alt="Waterpeco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="Waterpeco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/><img alt="Waterpeco-friendly products work details" class="service-item__popup__slider-image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div></div><div class="service-item__popup-content__inner"><h4 class="h3" data-no-anim="">Drinkware</h4><p class="mb__l" data-no-anim="">Reusable cups, mugs, and bottles made from coffee husk and bamboo. Keep your drinks fresh and sustainable.</p><div class="popup-price-tag">$350.00</div>
@@ -188,7 +217,7 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
 <button class="size-btn" data-size="L">L</button>
 <button class="size-btn" data-size="XL">XL</button>
 </div>
-<button class="add-to-cart-popup-btn" data-product-id="waterpeco-friendly products">Book Service Package</button></div></div></div></div>
+<button class="add-to-cart-popup-btn" data-product-id="waterpeco-friendly products">Add to Cart</button></div></div></div></div>
 <path d="M151 908L144.435 908L144.435 -5.7395e-07L151 0L151 908Z" fill="url(#paint0_linear_2353_199)"></path>
 <path d="M131.304 908L118.174 908L118.174 -2.86975e-06L131.304 -1.72185e-06L131.304 908Z" fill="url(#paint1_linear_2353_199)"></path>
 <path d="M105.043 908L85.3478 908L85.3479 -5.7395e-06L105.044 -4.01765e-06L105.043 908Z" fill="url(#paint2_linear_2353_199)"></path>
@@ -196,195 +225,195 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
 <path d="M32.826 908L-7.62939e-05 908L3.08594e-06 -1.32008e-05L32.8261 -1.03311e-05L32.826 908Z" fill="url(#paint4_linear_2353_199)"></path>
 <defs>
 <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_2353_199" x1="75.5002" x2="75.5017" y1="-9.07266e-05" y2="908">
-<stop offset="0.149038" stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop offset="0.149038" stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear_2353_199" x1="75.5002" x2="75.5017" y1="-9.07266e-05" y2="908">
-<stop offset="0.149038" stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop offset="0.149038" stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint2_linear_2353_199" x1="75.5002" x2="75.5017" y1="-9.07266e-05" y2="908">
-<stop offset="0.149038" stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop offset="0.149038" stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint3_linear_2353_199" x1="75.5002" x2="75.5017" y1="-9.07266e-05" y2="908">
-<stop offset="0.149038" stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop offset="0.149038" stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint4_linear_2353_199" x1="75.5002" x2="75.5017" y1="-9.07266e-05" y2="908">
-<stop offset="0.149038" stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop offset="0.149038" stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 </defs>
-</div></div></div></div></div></section><section class="section" data-floatcard-section="" data-wf--usp--variant="base"><div class="w-layout-blockcontainer container w-container"><div class="row"><div class="col__1"><div class="col"><div class="center-content"><div class="max__600"><h2 class="h2">made with crop-waste.</h2></div></div></div></div><div class="col__3"><div class="usp-card is__2" data-floatcard-1=""><h3 class="h4">Rice Husk</h3><div style="font-size: 1.1rem; margin-bottom: 1.5rem; margin-top: -0.5rem; font-weight: 600; opacity: 0.8;">Goodness of rice</div><div style="margin-bottom: 1.5rem; width: 100%; height: 260px; background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; position: relative; z-index: 10;"><span style="color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Image Placeholder</span></div><p>Rice is the best, the most nutritive, and unquestionably the most widespread staple in the world. Products with rice husk &amp; straw encourage farmers to stop crop-burning &amp; protect our planet.</p><div class="usp-card__graphic w-embed"><svg fill="none" height="100%" viewBox="0 0 437 263" width="100%" xmlns="http://www.w3.org/2000/svg">
+</div></div></div></div></div></section><section class="section" data-floatcard-section="" data-wf--usp--variant="base"><div class="w-layout-blockcontainer container w-container"><div class="row"><div class="col__1"><div class="col"><div class="center-content"><div class="max__600"><h2 class="h2">made with crop-waste.</h2></div></div></div></div><div class="col__3"><div class="usp-card is__2" data-floatcard-1=""><h3 class="h4">Rice Husk</h3><div style="font-size: 1.1rem; margin-bottom: 1.5rem; margin-top: -0.5rem; font-weight: 600; opacity: 0.8;">Goodness of rice</div><img src="/rice husk.png" alt="Rice Husk Material" style="margin-bottom: 1.5rem; width: 100%; height: 260px; object-fit: cover; border-radius: 12px; position: relative; z-index: 10;" /><p>Rice is the best, the most nutritive, and unquestionably the most widespread staple in the world. By transforming agricultural by-products like rice husk and straw into durable, eco-friendly drinkware, we actively encourage farmers to stop harmful crop-burning practices. This reduces carbon emissions and air pollution while providing an additional source of income for rural communities.</p><div class="usp-card__graphic w-embed"><svg fill="none" height="100%" viewBox="0 0 437 263" width="100%" xmlns="http://www.w3.org/2000/svg">
 
 <defs>
 <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint2_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint3_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint4_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint5_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint6_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint7_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint8_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint9_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint10_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint11_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint12_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint13_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint14_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint15_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint16_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint17_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint18_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint19_linear_2427_764" x1="218.5" x2="218.5" y1="263" y2="0">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 </defs>
-</svg></div></div><div class="usp-card is__2" data-floatcard-2=""><h3 class="h4">Coffee Husk</h3><div style="font-size: 1.1rem; margin-bottom: 1.5rem; margin-top: -0.5rem; font-weight: 600; opacity: 0.8;">Fragrance of coffee</div><div style="margin-bottom: 1.5rem; width: 100%; height: 260px; background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; position: relative; z-index: 10;"><span style="color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Image Placeholder</span></div><p>Most people wake up to the fragrance of coffee. Coffee is the most popular beverage with many benefits for healthy living. Products made with coffee husk make every morning a sustainable one.</p><div class="usp-card__graphic w-embed"><svg fill="none" height="100%" viewBox="0 0 437 263" width="100%" xmlns="http://www.w3.org/2000/svg">
+</svg></div></div><div class="usp-card is__2" data-floatcard-2=""><h3 class="h4">Coffee Husk</h3><div style="font-size: 1.1rem; margin-bottom: 1.5rem; margin-top: -0.5rem; font-weight: 600; opacity: 0.8;">Fragrance of coffee</div><img src="/coffee huk.png" alt="Coffee Husk Material" style="margin-bottom: 1.5rem; width: 100%; height: 260px; object-fit: cover; border-radius: 12px; position: relative; z-index: 10;" /><p>Most people wake up to the invigorating fragrance of coffee, making it the most popular beverage worldwide. However, coffee production generates a massive amount of husk waste. Our products ingeniously repurpose this coffee husk into beautiful, resilient, and natural-feeling essentials. Start every morning with a sustainable choice that gives new life to organic materials.</p><div class="usp-card__graphic w-embed"><svg fill="none" height="100%" viewBox="0 0 437 263" width="100%" xmlns="http://www.w3.org/2000/svg">
 
 <defs>
 <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint2_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint3_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint4_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint5_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint6_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint7_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint8_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint9_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint10_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint11_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint12_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint13_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint14_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint15_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint16_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint17_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint18_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint19_linear_2427_769" x1="218.5" x2="218.5" y1="1.91019e-05" y2="263">
-<stop stop-color="#FFA574"></stop>
-<stop offset="0.947115" stop-color="#FFA574" stop-opacity="0"></stop>
+<stop stop-color="#A8CBA0"></stop>
+<stop offset="0.947115" stop-color="#A8CBA0" stop-opacity="0"></stop>
 </lineargradient>
 </defs>
-</svg></div></div><div class="usp-card is__2" data-floatcard-3=""><h3 class="h4">Bamboo fibre</h3><div style="font-size: 1.1rem; margin-bottom: 1.5rem; margin-top: -0.5rem; font-weight: 600; opacity: 0.8;">Strength of bamboo</div><div style="margin-bottom: 1.5rem; width: 100%; height: 260px; background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; position: relative; z-index: 10;"><span style="color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">Image Placeholder</span></div><p>Bamboo is a magical plant that grows faster and absorbs more CO2 than any other species. Its strength is compared to that of steel. Products made with bamboo offer the best carbon footprint.</p><div class="usp-card__graphic w-embed"><svg fill="none" height="100%" viewBox="0 0 438 318" width="100%" xmlns="http://www.w3.org/2000/svg">
+</svg></div></div><div class="usp-card is__2" data-floatcard-3=""><h3 class="h4">Bamboo fibre</h3><div style="font-size: 1.1rem; margin-bottom: 1.5rem; margin-top: -0.5rem; font-weight: 600; opacity: 0.8;">Strength of bamboo</div><img src="/bamboo.png" alt="Bamboo Material" style="margin-bottom: 1.5rem; width: 100%; height: 260px; object-fit: cover; border-radius: 12px; position: relative; z-index: 10;" /><p>Bamboo is a magical, rapidly renewable plant that grows exceptionally fast and absorbs significantly more CO2 than almost any other species. Known for its incredible durability, its structural strength is often compared to that of steel. By incorporating bamboo fibre into our products, we offer an eco-conscious alternative that minimizes environmental impact while delivering outstanding quality.</p><div class="usp-card__graphic w-embed"><svg fill="none" height="100%" viewBox="0 0 438 318" width="100%" xmlns="http://www.w3.org/2000/svg">
 
 
 <defs>
@@ -473,7 +502,10 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
 <stop offset="1" stop-color="#848C8F"></stop>
 </lineargradient>
 </defs>
-</svg></div></div></div></div></div></section><section class="section" data-floating-content-section="" data-wf--floating-content--variant="base"><div class="w-layout-blockcontainer container w-container"><div class="col__2"><div class="col" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bea-f4ca1be7"><div class="floating-content__text"><h2 class="h2">For Property Owners &amp; Commercial Managers</h2><p class="mb__l">Thulira works directly with residential developers, commercial building managers, and homeowners who value execution safety, precision diagnostics, and reliable execution. From large commercial rooftops to luxury residential areas: we deliver.</p><div></div></div></div><div class="col" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bf0-f4ca1be7"><img alt="Thulira commercial management project" class="floating-content__image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div></div></div></section><section class="section is__dark"><div class="w-layout-blockcontainer container w-container"><div class="row"><div class="col__1"><div class="col"><div class="center-content"><div class="max__500"><h2 class="h2">Our Featured Projects</h2><p>A showcase of our building, eco-friendly products, and waterpeco-friendly products works across Singapore.</p></div></div></div></div><div class="col__1"><div class="col"><div aria-label="Featured content" aria-roledescription="carousel" class="cascading-slider" data-cascading-slider-wrap=""><div class="cascading-slider__collection w-dyn-list"><div class="cascading-slider__list w-dyn-items" data-cascading-viewport="" role="list"><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Toilet &amp; Balcony Regrouting" class="cascading-slider__img" draggable="false" loading="eager" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Toilet &amp; Balcony Regrouting</h3><p class="margin-none">Serangoon, Singapore</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Roof Waterpeco-friendly products &amp; Coating" class="cascading-slider__img" draggable="false" loading="eager" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Roof Waterpeco-friendly products &amp; Coating</h3><p class="margin-none">Changi, Singapore</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Clay Tile eco-friendly product" class="cascading-slider__img" draggable="false" loading="eager" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Clay Tile eco-friendly product</h3><p class="margin-none">Orchard Road, Singapore</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Toilet &amp; Balcony Regrouting" class="cascading-slider__img" draggable="false" loading="eager" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Toilet &amp; Balcony Regrouting</h3><p class="margin-none">Tampines, Singapore</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Roof Waterpeco-friendly products &amp; Coating" class="cascading-slider__img" draggable="false" loading="eager" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Roof Waterpeco-friendly products &amp; Coating</h3><p class="margin-none">Tuas, Singapore</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Clay Tile eco-friendly product" class="cascading-slider__img" draggable="false" loading="eager" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Clay Tile eco-friendly product</h3><p class="margin-none">Bukit Timah, Singapore</p></div></div></div></div></div><nav aria-label="slider navigation" class="cascading-slider__nav"><button aria-label="previous slide" class="cascading-slider__button" data-cascading-slider-prev=""><svg class="cascading-slider__button-arrow is--prev" fill="none" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path><path d="M21 12H2" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path></svg></button><button aria-label="next slide" class="cascading-slider__button" data-cascading-slider-next=""><svg class="cascading-slider__button-arrow" fill="none" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path><path d="M21 12H2" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path></svg></button></nav></div></div></div></div></div><div class="w-embed"><style>
+</svg></div></div></div></div></div></section>
+
+
+<section class="section" data-floating-content-section="" data-wf--floating-content--variant="base"><div class="w-layout-blockcontainer container w-container"><div class="col__2"><div class="col" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bea-f4ca1be7"><div class="floating-content__text"><h2 class="h2">For Corporate &amp; Sustainable Gifting</h2><p class="mb__l">Thulira partners with forward-thinking organizations, event planners, and businesses who value sustainability and the circular economy. From large corporate events to bespoke eco-friendly gift sets, we deliver high-quality biocomposite products tailored for meaningful gifting.</p><div></div></div></div><div class="col" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bf0-f4ca1be7"><img alt="Thulira corporate gifting" class="floating-content__image" loading="lazy" src="/images/corporate_gifting.png"/></div></div></div></section><section class="section"><div class="w-layout-blockcontainer container w-container"><div class="row"><div class="col__1"><div class="col"><div class="center-content"><div class="max__500"><h2 class="h2" style="color: #111;">Our Sustainable Collections</h2><p style="color: #333;">Explore our beautiful, 100% food-safe biocomposite products designed to minimize your footprint.</p></div></div></div></div><div class="col__1"><div class="col"><div aria-label="Featured content" aria-roledescription="carousel" class="cascading-slider" data-cascading-slider-wrap=""><div class="cascading-slider__collection w-dyn-list"><div class="cascading-slider__list w-dyn-items" data-cascading-viewport="" role="list"><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Sustainable Drinkware" class="cascading-slider__img" draggable="false" loading="eager" src="/images/col_drinkware.png"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Sustainable Drinkware</h3><p class="margin-none">Tumblers & Mugs</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Eco-Friendly Tableware" class="cascading-slider__img" draggable="false" loading="eager" src="/images/col_tableware.png"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Eco-Friendly Tableware</h3><p class="margin-none">Plates & Bowls</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Zero-Waste Storage" class="cascading-slider__img" draggable="false" loading="eager" src="/images/col_storage.png"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Zero-Waste Storage</h3><p class="margin-none">Pantry & Kitchen Containers</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Corporate Gifting" class="cascading-slider__img" draggable="false" loading="eager" src="/images/col_gifting.png"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Corporate Gifting</h3><p class="margin-none">Bespoke Sustainable Sets</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Bamboo Accessories" class="cascading-slider__img" draggable="false" loading="eager" src="/images/col_accessories.png"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Bamboo Accessories</h3><p class="margin-none">Cutlery & Essentials</p></div></div></div><div aria-roledescription="slide" class="cascading-slider__item w-dyn-item" data-cascading-slide="" role="listitem"><div class="cascading-slider__item-inner"><div class="cascading-slider__item-bg"><img alt="Travel Drinkware" class="cascading-slider__img" draggable="false" loading="eager" src="/images/col_drinkware.png"/></div><div class="cascading-slider__item-content"><h3 class="cascading-slider__h">Travel Drinkware</h3><p class="margin-none">On-the-go Mugs</p></div></div></div></div></div><nav aria-label="slider navigation" class="cascading-slider__nav"><button aria-label="previous slide" class="cascading-slider__button" data-cascading-slider-prev=""><svg class="cascading-slider__button-arrow is--prev" fill="none" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path><path d="M21 12H2" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path></svg></button><button aria-label="next slide" class="cascading-slider__button" data-cascading-slider-next=""><svg class="cascading-slider__button-arrow" fill="none" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path><path d="M21 12H2" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5"></path></svg></button></nav></div></div></div></div></div><div class="w-embed"><style>
 
 [data-cascading-viewport] {
   --gap: 0.5em;
@@ -743,13 +775,32 @@ document.addEventListener('DOMContentLoaded', function() {
   initCascadingSlider();
 });
 
-</script></div><section class="section" data-floating-content-section="" data-wf--floating-content--variant="switch"><div class="w-layout-blockcontainer container w-container"><div class="col__2"><div class="col" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bea-f4ca1be7"><div class="floating-content__text"><h2 class="h2">A Trusted Construction Partner</h2><p class="mb__l">Thulira is specialized in premium building, eco-friendly products works in Singapore. We work on a turnkey basis with strict safety standards. Our strengths:</p><div><div class="check-item"><div class="icon__24 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+</script></div><section class="section" data-floating-content-section="" data-wf--floating-content--variant="switch"><div class="w-layout-blockcontainer container w-container"><div class="col__2"><div class="col" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bea-f4ca1be7"><div class="floating-content__text"><h2 class="h2">Fostering a stunning planet with zero waste</h2><p class="mb__l">As pioneers in circular eco-living, we craft innovative biocomposites to replace conventional plastics. By upcycling agricultural by-products, renewable resources, and recycled elements, our exclusive materials significantly reduce carbon emissions. We are dedicated to eradicating waste and forging a stronger, more sustainable tomorrow.</p><div><div class="check-item"><div class="icon__24 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.0001 16.1698L7.53015 12.6998C7.34317 12.5129 7.08957 12.4078 6.82515 12.4078C6.56072 12.4078 6.30712 12.5129 6.12015 12.6998C5.93317 12.8868 5.82812 13.1404 5.82812 13.4048C5.82813 13.5358 5.85391 13.6654 5.90402 13.7864C5.95412 13.9073 6.02756 14.0173 6.12015 14.1098L10.3001 18.2898C10.6901 18.6798 11.3201 18.6798 11.7101 18.2898L22.2901 7.70983C22.4771 7.52286 22.5822 7.26926 22.5822 7.00483C22.5822 6.74041 22.4771 6.48681 22.2901 6.29983C22.1032 6.11286 21.8496 6.00781 21.5851 6.00781C21.3207 6.00781 21.0671 6.11286 20.8801 6.29983L11.0001 16.1698Z" fill="black"></path>
-</svg></div><p>Clear Diagnostics &amp; Timelines</p></div><div class="check-item"><div class="icon__24 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+</svg></div><p>Environmental Impact: Climate Positive</p></div><div class="check-item"><div class="icon__24 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.0001 16.1698L7.53015 12.6998C7.34317 12.5129 7.08957 12.4078 6.82515 12.4078C6.56072 12.4078 6.30712 12.5129 6.12015 12.6998C5.93317 12.8868 5.82812 13.1404 5.82812 13.4048C5.82813 13.5358 5.85391 13.6654 5.90402 13.7864C5.95412 13.9073 6.02756 14.0173 6.12015 14.1098L10.3001 18.2898C10.6901 18.6798 11.3201 18.6798 11.7101 18.2898L22.2901 7.70983C22.4771 7.52286 22.5822 7.26926 22.5822 7.00483C22.5822 6.74041 22.4771 6.48681 22.2901 6.29983C22.1032 6.11286 21.8496 6.00781 21.5851 6.00781C21.3207 6.00781 21.0671 6.11286 20.8801 6.29983L11.0001 16.1698Z" fill="black"></path>
-</svg></div><p>Constant Quality Assurance</p></div><div class="check-item"><div class="icon__24 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.0001 16.1698L7.53015 12.6998C7.34317 12.5129 7.08957 12.4078 6.82515 12.4078C6.56072 12.4078 6.30712 12.5129 6.12015 12.6998C5.93317 12.8868 5.82812 13.1404 5.82812 13.4048C5.82813 13.5358 5.85391 13.6654 5.90402 13.7864C5.95412 13.9073 6.02756 14.0173 6.12015 14.1098L10.3001 18.2898C10.6901 18.6798 11.3201 18.6798 11.7101 18.2898L22.2901 7.70983C22.4771 7.52286 22.5822 7.26926 22.5822 7.00483C22.5822 6.74041 22.4771 6.48681 22.2901 6.29983C22.1032 6.11286 21.8496 6.00781 21.5851 6.00781C21.3207 6.00781 21.0671 6.11286 20.8801 6.29983L11.0001 16.1698Z" fill="black"></path>
-</svg></div><p>Up to 10-Year Warranty</p></div></div></div></div><div class="col w-variant-d62a4a43-e6a5-9028-32fe-1a4b4f65e535" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bf0-f4ca1be7"><img alt="Thulira project work" class="floating-content__image" loading="lazy" src="https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder"/></div></div></div></section></section></main><footer class="footer__wrapper"><section class="footer__topper"><div class="w-layout-blockcontainer container w-container"><div class="col__1"><div class="col"><div class="z-1"><div class="center-content"><div class="max__500"><div class="mb__l"><h3 class="h3 is__bigger">Built on Trust.<br/>Proven by Results.</h3></div><a class="button w-inline-block" href="/shop"><div>Shop Now</div></a><div class="cta-people"><img alt="Thulira team consulting during a site inspection." loading="lazy" src="/images/lifestyle_drinking_1783235322559.png"/><div class="opacity__65">Get in touch today</div></div></div></div></div><img alt="Thulira project work" class="cta-image is__1" loading="lazy" src="/images/rice_husk_bottle_1783235334509.png"/><img alt="Thulira project work" class="cta-image is__2" loading="lazy" src="/images/coffee_husk_cup_1783235346000.png"/><img alt="Thulira project work" class="cta-image is__3" loading="lazy" src="/images/bamboo_tumbler_1783235358433.png"/></div></div></div></section><section class="section is__dark v__footer"><div class="z-1"><div class="w-layout-blockcontainer container w-container"><div class="row"><div class="col__footer"><div class="col" id="w-node-_59d0562d-fb65-eaa0-fc67-8e3d4af3a4e3-4af3a4d1"><p class="h4">Sustainable biocomposite home products including bottles and drinkware.</p><p class="mb__m">Ethically sourced, highly durable, and 100% food-safe sustainable alternatives.</p><a class="button w-inline-block" href="/shop"><div>Shop Now</div></a></div><nav class="col"><div class="footer__text is__heading">Menu</div><ul class="w-list-unstyled" role="list"><li><a aria-current="page" class="footer__text w--current" href="/">Home</a></li><li><a class="footer__text" href="/about">About Us</a></li><li><a class="footer__text" href="/shop">Shop</a></li><li><a class="footer__text" href="/blog">Blog</a></li></ul></nav><nav class="col"><div class="footer__text is__heading">Contact</div><ul class="w-list-unstyled" role="list"><li><a class="footer__text" href="mailto:info@thulira.com">info@thulira.com</a></li><li><a class="footer__text" href="tel:+6582355452">+65 8235 5452</a></li><li><a class="footer__text" href="https://wa.me/6582355452" target="_blank">WhatsApp</a></li><li><div class="footer__text">Sustainable Materials</div></li><li><div class="footer__text">100% Food Safe</div></li><li><div class="footer__text">Island-wide Delivery</div></li></ul></nav></div><div class="col__1"><div class="col"><div class="w-embed"><div class="footer__logo-text-wrap" style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem 0; box-sizing: border-box;"><h2 style="font-family: 'Inter', sans-serif; font-size: calc(2rem + 3.5vw); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.06); text-align: center; margin: 0; line-height: 0.9; user-select: none;">Thulira</h2></div></div></div><div class="col__1"><div class="col"><div class="imprint__wrapper"><a class="imprint__text" href="https://www.overflow.nl">By Overflow</a></div></div></div></div></div></div><div class="footer__deco v-footer w-embed"><svg fill="none" height="100%" viewBox="0 0 151 850" width="100%" xmlns="http://www.w3.org/2000/svg">00/svg"&gt;
+</svg></div><p>Key Benefit: Carbon Negative</p></div></div></div></div><div class="col w-variant-d62a4a43-e6a5-9028-32fe-1a4b4f65e535" id="w-node-_0f278562-46a9-107a-163f-6597f4ca1bf0-f4ca1be7"><img alt="Thulira project work" class="floating-content__image" loading="lazy" src="/images/zero_waste.png"/></div></div></div></section></section></main><footer class="footer__wrapper"><section class="footer__topper"><div class="w-layout-blockcontainer container w-container"><div class="col__1"><div class="col"><div class="z-1"><div class="center-content"><div class="max__500"><div class="mb__l"><h3 class="h3 is__bigger">Built on Trust.<br/>Proven by Results.</h3></div><a class="button w-inline-block" href="/shop"><div>Shop Now</div></a><div class="cta-people"><img alt="Thulira project work" loading="lazy" src="/images/lifestyle_drinking_1783235322559.png"/><div class="opacity__65">Get in touch today</div></div></div></div></div><img alt="Thulira project work" class="cta-image is__1" loading="lazy" src="/images/rice_husk_bottle_1783235334509.png"/><img alt="Thulira project work" class="cta-image is__2" loading="lazy" src="/images/coffee_husk_cup_1783235346000.png"/><img alt="Thulira project work" class="cta-image is__3" loading="lazy" src="/images/bamboo_tumbler_1783235358433.png"/></div></div></div></section><section class="section is__dark v__footer"><div class="z-1"><div class="w-layout-blockcontainer container w-container"><div class="row"><div class="col__footer"><div class="col" id="w-node-_59d0562d-fb65-eaa0-fc67-8e3d4af3a4e3-4af3a4d1"><p class="h4">Sustainable biocomposite home products including bottles and drinkware.</p><p class="mb__m">Ethically sourced, highly durable, and 100% food-safe sustainable alternatives.</p><div style="display: flex; align-items: center; gap: 20px;">
+<a class="button w-inline-block" href="/shop" style="margin-bottom: 0;"><div>Shop Now</div></a>
+<ul class="wrapper" style="height: auto; width: auto; padding: 0; margin: 0; justify-content: flex-start;">
+  <li class="icon facebook">
+    <span class="tooltip">Facebook</span>
+    <svg viewBox="0 0 320 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+    </svg>
+  </li>
+  <li class="icon whatsapp">
+    <span class="tooltip">WhatsApp</span>
+    <svg viewBox="0 0 448 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+    </svg>
+  </li>
+  <li class="icon instagram">
+    <span class="tooltip">Instagram</span>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+    </svg>
+  </li>
+</ul></div></div><nav class="col"><div class="footer__text is__heading">Menu</div><ul class="w-list-unstyled" role="list"><li><a aria-current="page" class="footer__text w--current" href="/">Home</a></li><li><a class="footer__text" href="/about">About Us</a></li><li><a class="footer__text" href="/shop">Shop</a></li><li><a class="footer__text" href="/blog">Blog</a></li></ul></nav><nav class="col"><div class="footer__text is__heading">Contact</div><ul class="w-list-unstyled" role="list"><li><a class="footer__text" href="mailto:info@thulira.com">info@thulira.com</a></li><li><a class="footer__text" href="tel:8220107245">8220107245</a></li></ul></nav></div><div class="col__1"><div class="col"><div class="w-embed"><div class="footer__logo-text-wrap" style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem 0; box-sizing: border-box;"><h2 style="font-family: 'Inter', sans-serif; font-size: calc(2rem + 3.5vw); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.06); text-align: center; margin: 0; line-height: 0.9; user-select: none;"><img src="/thulira-transparent.png" alt="Thulira Logo" style="height: 180px; width: auto;" /></h2></div></div></div><div class="col__1"><div class="col"><div class="imprint__wrapper" style="width: 100%; display: flex; justify-content: center; padding: 2rem 0; color: rgba(255,255,255,0.5); font-size: 0.9rem;">&copy; 2026 Thulira. All rights reserved.</div></div></div></div></div></div><div class="footer__deco v-footer w-embed"><svg fill="none" height="100%" viewBox="0 0 151 850" width="100%" xmlns="http://www.w3.org/2000/svg">00/svg"&gt;
 <path d="M0 -26H6.56522L6.56522 851H0L0 -26Z" fill="url(#paint0_linear_2462_171)"></path>
 <path d="M19.6957 -26H32.8261L32.8261 851H19.6957L19.6957 -26Z" fill="url(#paint1_linear_2462_171)"></path>
 <path d="M45.9565 -26H65.6522L65.6522 851H45.9565L45.9565 -26Z" fill="url(#paint2_linear_2462_171)"></path>
@@ -757,24 +808,24 @@ document.addEventListener('DOMContentLoaded', function() {
 <path d="M118.174 -26L151 -26L151 851H118.174L118.174 -26Z" fill="url(#paint4_linear_2462_171)"></path>
 <defs>
 <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_2462_171" x1="75.5001" x2="75.5016" y1="-25.9999" y2="851">
-<stop stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear_2462_171" x1="75.5001" x2="75.5016" y1="-25.9999" y2="851">
-<stop stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint2_linear_2462_171" x1="75.5001" x2="75.5016" y1="-25.9999" y2="851">
-<stop stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint3_linear_2462_171" x1="75.5001" x2="75.5016" y1="-25.9999" y2="851">
-<stop stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 <lineargradient gradientunits="userSpaceOnUse" id="paint4_linear_2462_171" x1="75.5001" x2="75.5016" y1="-25.9999" y2="851">
-<stop stop-color="#FFA574" stop-opacity="0"></stop>
-<stop offset="1" stop-color="#FFA574"></stop>
+<stop stop-color="#A8CBA0" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#A8CBA0"></stop>
 </lineargradient>
 </defs>
 </svg></div></div></section></footer></div><script is:inline crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6978c74eb7a56e10b85274cb" type="text/javascript"></script><script is:inline crossorigin="anonymous" integrity="sha384-eLhtiOwpAcsrjTU3szoidTK2FT4sgwN998/lRT314vxiyUJEzKSwZ02q/f+3Y8k8" src="https://cdn.prod.website-files.com/6978c74eb7a56e10b85274cb/js/webflow.schunk.05ab46bf443beb37.js" type="text/javascript"></script><script is:inline crossorigin="anonymous" integrity="sha384-r/0aJtxyik6X2Bcs01kwYuDwVfLbqN6fLwWBO/TorW7UUz3L+QbPbV9iJPGrCct5" src="https://cdn.prod.website-files.com/6978c74eb7a56e10b85274cb/js/webflow.04afb2dd.b8ca743d6a44ff0f.js" type="text/javascript"></script><script is:inline src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js" type="text/javascript"></script><script is:inline src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js" type="text/javascript"></script><script is:inline src="https://cdn.prod.website-files.com/gsap/3.15.0/Observer.min.js" type="text/javascript"></script><script is:inline src="https://cdn.prod.website-files.com/gsap/3.15.0/Draggable.min.js" type="text/javascript"></script><script is:inline src="https://cdn.prod.website-files.com/gsap/3.15.0/SplitText.min.js" type="text/javascript"></script><script is:inline type="text/javascript">gsap.registerPlugin(ScrollTrigger,Observer,Draggable,SplitText);</script><script is:inline src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>

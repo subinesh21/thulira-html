@@ -168,6 +168,16 @@ const BOTTLE_ASSETS = {
     },
     defaultColor: 'Green'
   },
+  'Lira Pure Insulated Maxi': {
+    folder: 'Lira pure insulated maxi',
+    colors: {
+      'Green': { hex: '#8f9779', count: 5 },
+      'Oriole': { hex: '#d67229', count: 5 },
+      'Purple': { hex: '#7b1fa2', count: 5 },
+      'Tortilla': { hex: '#c3ad96', count: 5 }
+    },
+    defaultColor: 'Green'
+  },
   'Lira Hydra Mini': {
     folder: 'Lira hydra mini',
     colors: {
@@ -179,6 +189,16 @@ const BOTTLE_ASSETS = {
       'Oriole': { hex: '#d67229', count: 10 },
       'Purple': { hex: '#7b1fa2', count: 10 },
       'Tortilla': { hex: '#c3ad96', count: 10 }
+    },
+    defaultColor: 'Green'
+  },
+  'Lira Hydra Maxi': {
+    folder: 'Lira hydra maxi',
+    colors: {
+      'Green': { hex: '#8f9779', count: 5 },
+      'Oriole': { hex: '#d67229', count: 5 },
+      'Purple': { hex: '#7b1fa2', count: 5 },
+      'Tortilla': { hex: '#c3ad96', count: 5 }
     },
     defaultColor: 'Green'
   },
@@ -502,13 +522,13 @@ function injectCartMarkup() {
         <span>Total Due on Delivery</span>
         <span id="cartGrandTotalVal">₹0.00</span>
       </div>
-      <a href="checkout.html" class="cart-checkout-btn" id="cartCheckoutBtn">
-        <span>Proceed to Checkout</span>
+      <button class="cart-checkout-btn" id="cartCheckoutBtn" onclick="window.location.href='/checkout'">
+        <span>Go to Checkout</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
-      </a>
+      </button>
     </div>
   `;
 
@@ -793,6 +813,15 @@ window.openAuthModal = function () {
 
 // Modify Navigation links to include Cart Trigger, Auth, and Orders
 function enhanceNavigation() {
+  const globalNavStyles = document.createElement('style');
+  globalNavStyles.innerHTML = `
+    .nav__flex { display: flex !important; width: 100% !important; justify-content: space-between !important; align-items: center !important; }
+    .nav__left { width: 33.33% !important; display: flex !important; justify-content: flex-start !important; align-items: center !important; }
+    .nav__center { width: 33.33% !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+    .nav__right { width: 33.33% !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; }
+  `;
+  document.head.appendChild(globalNavStyles);
+
   const navFlex = document.querySelector('.nav__flex');
   if (!navFlex) return;
 
@@ -803,7 +832,7 @@ function enhanceNavigation() {
     const cartTrigger = document.createElement('a');
     cartTrigger.className = 'nav__cart-trigger';
     cartTrigger.id = 'navCartTriggerBtn';
-    cartTrigger.style.cssText = 'margin-right: 1rem; cursor: pointer; display: flex; align-items: center; color: var(--thulira-text);';
+    cartTrigger.style.cssText = 'margin-right: 1rem; cursor: pointer; display: flex; align-items: center; color: #ffffff;';
     cartTrigger.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="21" r="1"></circle>
@@ -817,24 +846,13 @@ function enhanceNavigation() {
       openCartDrawer();
     });
 
-    // Auth Trigger (Icon)
-    const authTrigger = document.createElement('a');
-    authTrigger.className = 'nav__auth-trigger';
-    authTrigger.style.cssText = 'margin-right: 1.5rem; cursor: pointer; display: flex; align-items: center; color: var(--thulira-text);';
-    authTrigger.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
-      </svg>
-    `;
-
     const quoteDiv = navRight.querySelector('[data-hide-landscape]');
     if (quoteDiv) {
       navRight.insertBefore(cartTrigger, quoteDiv);
-      navRight.insertBefore(authTrigger, quoteDiv);
+      
     } else {
       navRight.appendChild(cartTrigger);
-      navRight.appendChild(authTrigger);
+      
     }
   }
 
@@ -884,7 +902,6 @@ document.addEventListener('click', (e) => {
 function renderProductsGrid() {
   const bottlesGrid = document.getElementById('bottlesGrid');
   const drinkwareGrid = document.getElementById('drinkwareGrid');
-
   if (!bottlesGrid && !drinkwareGrid) return;
 
   const productsList = Object.values(PRODUCTS);
@@ -907,12 +924,26 @@ function renderProductsGrid() {
         <div class="projecten__item w-dyn-item" role="listitem">
           <div class="product-card" onclick="window.location.href=\'/product?id=${p.id}\'">
             
-            <img alt="${p.name}" class="product-card__image" loading="lazy" src="${p.image_url || 'https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder'}" />
-            
-            <div class="product-card__overlay"></div>
+            <div class="product-card__image-container">
+              <img alt="${p.name}" class="product-card__image" loading="lazy" src="${p.image_url || 'https://placehold.co/800x600/e0e0e0/555555?text=Image+Placeholder'}" />
+              <div class="product-card__overlay"></div>
+              
+              <!-- Bottom Action Button (Slides up on hover) -->
+              <div class="product-card__bottom">
+                <button class="product-card__button" onclick="
+                  event.stopPropagation();
+                  const activeSize = this.closest('.product-card').querySelector('.size-btn.active');
+                  const variant = activeSize ? activeSize.getAttribute('data-variant') : 'Standard';
+                  addToCart('${p.id}', variant);
+                  openCartDrawer();
+                ">
+                  Add to Cart <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
 
             <div class="product-card__content">
-              <!-- Details Section (Always visible, slides up on hover) -->
+              <!-- Details Section (Always visible) -->
               <div class="product-card__details">
                 <h3 class="product-card__title">${p.name}</h3>
                 <div class="product-card__info-row">
@@ -921,19 +952,6 @@ function renderProductsGrid() {
                     ${variantsHtml}
                   </div>
                 </div>
-              </div>
-
-              <!-- Bottom Action Button (Slides up on hover) -->
-              <div class="product-card__bottom">
-                <button class="product-card__button" onclick="
-                  event.stopPropagation();
-                  const activeSize = this.closest('.product-card').querySelector('.size-btn.active');
-                  const variant = activeSize ? activeSize.getAttribute('data-variant') : 'Standard';
-                  addToCart('${p.id}', variant, 1);
-                  openCartDrawer();
-                ">
-                  Add to Cart <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
               </div>
             </div>
             
@@ -944,72 +962,13 @@ function renderProductsGrid() {
     gridEl.innerHTML = html;
   };
 
-  console.log("BottlesGrid HTML length INSIDE renderGrid:", bottlesGrid.innerHTML.length); renderGrid(bottlesGrid, "Bottles");
-  renderGrid(drinkwareGrid, 'Drinkware');
+  if (bottlesGrid) { console.log("BottlesGrid HTML length INSIDE renderGrid:", bottlesGrid.innerHTML.length); renderGrid(bottlesGrid, "Bottles"); }
+  if (drinkwareGrid) renderGrid(drinkwareGrid, 'Drinkware');
+
 }
 
 // Setup cart on DOM load
 document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    // Wait for supabase initialization
-    if (window.initSupabase) {
-      await window.initSupabase();
-
-      if (window.supabaseClient && window.supabaseClient.auth) {
-        // Define a helper to update all auth-related elements
-        window.updateAuthUI = (session) => {
-          const authLinks = document.querySelectorAll('.nav__auth-trigger, .nav__auth-link');
-          authLinks.forEach(el => {
-            if (el.classList.contains('nav__auth-trigger')) {
-              // Icon button: keep SVG innerHTML, just update click handlers and title/tooltips
-              if (session) {
-                el.title = 'My Account';
-                el.onclick = (e) => {
-                  e.preventDefault();
-                  window.location.href = 'account.html';
-                };
-              } else {
-                el.title = 'Sign In';
-                el.onclick = (e) => {
-                  e.preventDefault();
-                  if (window.openAuthModal) window.openAuthModal();
-                };
-              }
-            } else {
-              // Text links
-              if (session) {
-                el.textContent = 'My Account';
-                el.onclick = (e) => {
-                  e.preventDefault();
-                  window.location.href = 'account.html';
-                };
-              } else {
-                el.textContent = 'Sign In';
-                el.onclick = (e) => {
-                  e.preventDefault();
-                  if (window.openAuthModal) window.openAuthModal();
-                };
-              }
-            }
-          });
-        };
-
-        // Initialize state listener
-        window.supabaseClient.auth.onAuthStateChange((event, session) => {
-          window.currentSession = session;
-          window.updateAuthUI(session);
-        });
-
-        // Run an initial check after a short delay
-        const { data: { session } } = await window.supabaseClient.auth.getSession();
-        window.currentSession = session;
-        window.updateAuthUI(session);
-      }
-    }
-  } catch (err) {
-    console.error("Supabase init error (non-fatal):", err);
-  }
-
   try {
     await fetchProducts();
     renderProductsGrid();
@@ -1019,11 +978,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     injectCartMarkup();
-    if (typeof injectAuthMarkup === 'function') injectAuthMarkup();
+    
     enhanceNavigation();
-    if (window.updateAuthUI) {
-      window.updateAuthUI(window.currentSession || null);
-    }
+    
     updateCartBadges();
     renderCart();
   } catch (err) {
