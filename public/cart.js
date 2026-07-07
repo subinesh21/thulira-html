@@ -635,7 +635,7 @@ function injectAuthMarkup() {
     } catch (err) {
       console.warn('Mock OTP request failed, falling back to real Supabase OTP:', err.message);
       // Fallback to real Supabase
-      const { data, error } = await window.supabaseClient.auth.signInWithOtp({ phone });
+      const { error } = await window.supabaseClient.auth.signInWithOtp({ phone });
       if (error) {
         document.getElementById('authErrorMsg').textContent = error.message;
       } else {
@@ -671,7 +671,7 @@ function injectAuthMarkup() {
           throw new Error('Supabase client is not initialized');
         }
         // Authenticate with Supabase using password
-        let { data, error } = await window.supabaseClient.auth.signInWithPassword({
+        let { error } = await window.supabaseClient.auth.signInWithPassword({
           email: resData.email,
           password: resData.password
         });
@@ -691,7 +691,7 @@ function injectAuthMarkup() {
               email: resData.email,
               password: resData.password
             });
-            data = retryRes.data;
+            
             error = retryRes.error;
           } else {
             error = signupRes.error;
@@ -713,7 +713,7 @@ function injectAuthMarkup() {
           
           if (!anonRes.error) {
             console.log('[MOCK OTP] Anonymous sign-in succeeded.');
-            data = anonRes.data;
+            
             error = null;
           } else {
             console.error('[MOCK OTP] Anonymous sign-in failed:', anonRes.error.message);
@@ -754,7 +754,7 @@ function injectAuthMarkup() {
             await window.supabaseClient.auth.updateUser({
               data: { phone: phone, full_name: name }
             });
-            data = sharedRes.data;
+            
             error = null;
           }
         }
@@ -777,7 +777,7 @@ function injectAuthMarkup() {
       console.warn('Mock OTP verification failed, falling back to real Supabase verification:', err.message);
       // Fallback to real Supabase
       if (window.supabaseClient && window.supabaseClient.auth) {
-        const { data, error } = await window.supabaseClient.auth.verifyOtp({ phone, token, type: 'sms' });
+        const { error } = await window.supabaseClient.auth.verifyOtp({ phone, token, type: 'sms' });
         if (error) {
           document.getElementById('authErrorMsg').textContent = error.message;
         } else {
@@ -806,28 +806,17 @@ window.openAuthModal = function () {
   if (document.getElementById('authNameInput')) document.getElementById('authNameInput').value = '';
   document.getElementById('authPhoneInput').value = '';
   document.getElementById('authOtpInput').value = '';
-
   document.getElementById('authOverlay').classList.add('active');
   document.getElementById('authModal').style.display = 'block';
 }
 
 // Modify Navigation links to include Cart Trigger, Auth, and Orders
 function enhanceNavigation() {
-  const globalNavStyles = document.createElement('style');
-  globalNavStyles.innerHTML = `
-    .nav__flex { display: flex !important; width: 100% !important; justify-content: space-between !important; align-items: center !important; }
-    .nav__left { width: 33.33% !important; display: flex !important; justify-content: flex-start !important; align-items: center !important; }
-    .nav__center { width: 33.33% !important; display: flex !important; justify-content: center !important; align-items: center !important; }
-    .nav__right { width: 33.33% !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; }
-  `;
-  document.head.appendChild(globalNavStyles);
-
   const navFlex = document.querySelector('.nav__flex');
   if (!navFlex) return;
 
   const navRight = navFlex.querySelector('.nav__right');
   if (navRight && !navRight.querySelector('.nav__cart-trigger')) {
-
     // Cart Trigger
     const cartTrigger = document.createElement('a');
     cartTrigger.className = 'nav__cart-trigger';
@@ -902,14 +891,14 @@ document.addEventListener('click', (e) => {
 function renderProductsGrid() {
   const bottlesGrid = document.getElementById('bottlesGrid');
   const drinkwareGrid = document.getElementById('drinkwareGrid');
-  if (!bottlesGrid && !drinkwareGrid) return;
+  const featuredGrid = document.getElementById('featuredGrid');
+  if (!bottlesGrid && !drinkwareGrid && !featuredGrid) return;
 
   const productsList = Object.values(PRODUCTS);
   if (productsList.length === 0) return;
 
-  const renderGrid = (gridEl, category) => {
+  const renderGrid = (gridEl, items) => {
     if (!gridEl) return;
-    const items = productsList.filter(p => p.category === category);
     let html = '';
     items.forEach(p => {
       let variantsHtml = '';
@@ -962,8 +951,9 @@ function renderProductsGrid() {
     gridEl.innerHTML = html;
   };
 
-  if (bottlesGrid) { console.log("BottlesGrid HTML length INSIDE renderGrid:", bottlesGrid.innerHTML.length); renderGrid(bottlesGrid, "Bottles"); }
-  if (drinkwareGrid) renderGrid(drinkwareGrid, 'Drinkware');
+  if (bottlesGrid) { console.log("BottlesGrid HTML length INSIDE renderGrid:", bottlesGrid.innerHTML.length); renderGrid(bottlesGrid, productsList.filter(p => p.category === 'Bottles')); }
+  if (drinkwareGrid) renderGrid(drinkwareGrid, productsList.filter(p => p.category === 'Drinkware'));
+  if (featuredGrid) renderGrid(featuredGrid, productsList.slice(0, 4));
 
 }
 

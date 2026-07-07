@@ -22,18 +22,18 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: var(--thulira-transition);
-  color: #000000 !important;
+  color: #ffffff !important;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
 }
 
 .nav__cart-trigger:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .nav__cart-trigger svg {
-  stroke: #000000;
+  stroke: #ffffff;
 }
 
 .cart-badge {
@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: center;
   background: var(--thulira-orange);
-  color: #000000;
+  color: #ffffff;
   border-radius: 50%;
   width: 18px;
   height: 18px;
@@ -300,7 +300,7 @@
 
 .cart-checkout-btn {
   background: var(--thulira-orange);
-  color: #000000;
+  color: #ffffff;
   border: none;
   padding: 0.9rem;
   font-weight: 700;
@@ -328,7 +328,7 @@
 /* ADD TO CART POPUP ACCENT */
 .add-to-cart-popup-btn {
   background: var(--thulira-orange);
-  color: #000000;
+  color: #ffffff;
   border: none;
   padding: 0.75rem 1.5rem;
   font-weight: 700;
@@ -1267,7 +1267,7 @@ main {
   justify-content: center;
   width: 100%;
   background: var(--thulira-orange, #f78c44);
-  color: #000000;
+  color: #ffffff;
   border: none;
   padding: 0.75rem 1rem;
   font-weight: 700;
@@ -1310,5 +1310,100 @@ video, iframe {
   border-radius: 50% !important;
 }
 
+/* Custom Navbar Layout */
+.nav__flex {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  position: relative !important;
+}
+.nav__left, .nav__right {
+  display: flex !important;
+}
+.nav__left {
+  justify-content: flex-start !important;
+}
+.nav__toggle {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+.nav__right {
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 1rem;
+}
+.nav__cart-trigger {
+  margin-right: 0 !important;
+}
+.nav__center {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  justify-content: center !important;
+}
 
+/* Hide footer decorative green lines */
+.footer__deco {
+  display: none !important;
+}
 
+/* Reduce space above footer logo */
+.footer__logo-text-wrap {
+  padding-top: 0 !important;
+  margin-top: -3rem !important;
+}
+
+/* Reduce space above Built on Trust section */
+.footer__topper {
+  padding-top: 2rem !important;
+  margin-top: 0 !important;
+}
+.footer__wrapper {
+  margin-top: 0 !important;
+}
+
+/* Mobile Checkout Page Overrides */
+@media screen and (max-width: 991px) {
+  .flat-on-mobile {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding-bottom: 160px !important; /* space for sticky footer */
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+  /* Force disable parent transforms to ensure fixed positioning works on viewport */
+  html, body, .page__wrapper, .section, .container, .w-container, .w-layout-blockcontainer, #checkout-page-container {
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    will-change: auto !important;
+    contain: none !important;
+    backdrop-filter: none !important;
+  }
+  .sticky-footer-mobile {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #fff !important;
+    padding: 1rem 1.5rem 1rem 1.5rem !important;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.1) !important;
+    z-index: 9999 !important;
+  }
+  .sticky-footer-mobile > div:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+  .sticky-footer-mobile > div:last-child {
+    margin-top: 1rem !important;
+  }
+  .checkout-section-mobile {
+    padding-top: 50px !important;
+  }
+}
